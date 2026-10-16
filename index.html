@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0f0806">
+  <title>For you</title>
+  <!-- Hides the page until experience.js has set the closed states. If the script
+       never runs, the page shows after 3 s in its finished state: everything readable. -->
+  <script>document.documentElement.classList.add('js-pending');setTimeout(function(){document.documentElement.classList.remove('js-pending')},3000)</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300;1,6..72,400&family=Instrument+Sans:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="experience.css">
+  <link rel="stylesheet" href="scenes.css">
+  <script src="story.js" defer></script>
+  <script src="scenes.js" defer></script>
+  <script src="experience.js" defer></script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<noscript><p class="noscript">This gift opens with JavaScript. Please turn it on, or open the link in another browser.</p></noscript>
+<main id="experience">
+
+  <!-- SCENE 1 — OPEN THE GIFT. The class list is the finished state; experience.js closes it. -->
+  <section class="scene gift s-press s-crack s-open s-rise s-present s-written s-done" id="scene-gift" aria-labelledby="gift-title" tabindex="-1">
+    <h1 class="sr-only" id="gift-title">A letter for <span id="gift-name">you</span></h1>
+    <p class="sample-note" id="sample-note" hidden>Sample story · prototype</p>
+    <div class="candle" aria-hidden="true"></div>
+    <div class="gift-stage" id="gift-stage">
+      <span class="bloom" aria-hidden="true"></span>
+      <span class="env-part env-back" aria-hidden="true"></span>
+      <div class="letter" id="letter" tabindex="-1">
+        <div class="letter-paper" id="letter-paper">
+          <p class="ink letter-greeting" id="letter-greeting" style="--i:0"></p>
+          <p class="ink letter-message" id="letter-message" style="--i:1"></p>
+          <p class="ink letter-sign" id="letter-sign" style="--i:2"></p>
+        </div>
+      </div>
+      <span class="env-part env-side env-side-l" aria-hidden="true"><i></i></span>
+      <span class="env-part env-side env-side-r" aria-hidden="true"><i></i></span>
+      <span class="env-part env-bottom" aria-hidden="true"><i></i></span>
+      <span class="env-part env-address" aria-hidden="true"><span class="addr-to" id="env-address"></span><span class="addr-from" id="env-from"></span></span>
+      <span class="env-part flap-shadow" aria-hidden="true"><i></i></span>
+      <span class="env-part seal seal-bottom" aria-hidden="true"><i></i><b class="seal-mark"></b></span>
+      <span class="env-part env-flap" aria-hidden="true">
+        <i class="flap-out"></i><i class="flap-in"></i>
+        <span class="seal seal-top"><i></i><b class="seal-mark"></b></span>
+      </span>
+      <button class="gift-hit" id="gift-hit" type="button" aria-label="Open the envelope"></button>
+    </div>
+    <p class="gift-hint" id="gift-hint" aria-hidden="true">Tap to open</p>
+    <a class="cue gift-cue" id="gift-cue" href="#scene-memory">Come in</a>
+  </section>
+
+  <!-- SCENE 2 — OUR FIRST MEMORY -->
+  <section class="scene memory is-placed is-developed is-revealed" id="scene-memory" aria-labelledby="memory-line" tabindex="-1">
+    <div class="memory-layout">
+      <div class="memory-photo-col">
+        <figure class="mprint" id="mprint">
+          <div class="mprint-img">
+            <img id="memory-img" alt="" width="1400" height="1050" decoding="async">
+            <span class="stamp" id="memory-stamp" aria-hidden="true"></span>
+          </div>
+          <figcaption class="mcaption" id="memory-caption"></figcaption>
+          <div class="mprint-hit" id="memory-hit" aria-hidden="true"></div>
+        </figure>
+        <div class="slip" id="memory-slip">
+          <div class="slip-paper">
+            <p id="memory-thought"></p>
+            <span class="slip-sign" id="memory-sign"></span>
+          </div>
+        </div>
+      </div>
+      <div class="memory-text">
+        <p class="kicker" id="memory-date"></p>
+        <h2 class="memory-line" id="memory-line"></h2>
+        <p class="hint" id="memory-hint" aria-hidden="true">Double-tap the photo</p>
+        <button class="alt-btn" id="memory-alt" type="button" aria-expanded="true" aria-controls="memory-slip">Fold it away</button>
+        <a class="cue memory-cue" id="memory-cue" href="#scene-back">One more</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCENE 3 — TURN THE PHOTO OVER -->
+  <section class="scene backscene is-placed" id="scene-back" aria-labelledby="back-line" tabindex="-1">
+    <h2 class="back-line" id="back-line"></h2>
+    <div class="pstage" id="pstage">
+      <div class="pshadow" id="pshadow" aria-hidden="true"></div>
+      <div class="tilt" id="ptilt">
+        <div class="press">
+          <div class="lift" id="plift">
+            <div class="card">
+              <div class="face front" id="pfront">
+                <img id="back-img" alt="" width="1400" height="1750" decoding="async">
+                <span class="sheen" aria-hidden="true"></span>
+              </div>
+              <span class="edge edge-r" aria-hidden="true"></span>
+              <span class="edge edge-l" aria-hidden="true"></span>
+              <span class="edge edge-t" aria-hidden="true"></span>
+              <span class="edge edge-b" aria-hidden="true"></span>
+              <div class="face back" id="pback">
+                <p class="back-date" id="back-date"></p>
+                <div class="back-text" id="back-text">
+                  <p class="back-greeting" id="back-greeting"></p>
+                  <p class="back-dedication" id="back-dedication"></p>
+                  <p class="back-sign" id="back-sign"></p>
+                </div>
+                <span class="sheen" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="p-hit" id="p-hit" type="button" aria-label="Turn the photo over"></button>
+    </div>
+    <p class="hint back-hint" id="back-hint" aria-hidden="true">Tap the photo</p>
+    <p class="sr-only" id="back-live" aria-live="polite"></p>
+  </section>
+
+  <!-- SCENE 4 — OUR LITTLE UNIVERSE -->
+  <section class="scene universe" id="scene-universe" aria-labelledby="universe-line" tabindex="-1" hidden>
+    <div class="sky" aria-hidden="true"><span class="sky-far"></span><span class="sky-near"></span></div>
+    <h2 class="scene-line universe-line" id="universe-line"></h2>
+    <div class="constellation" id="constellation">
+      <svg class="const-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+        <path class="const-ghost" id="const-ghost"></path>
+        <path class="const-path" id="const-path" pathLength="1"></path>
+      </svg>
+      <div class="stars" id="stars" role="group" aria-label="Memories"></div>
+    </div>
+    <div class="star-card" id="star-card" aria-live="polite">
+      <p class="hint" id="universe-hint"></p>
+      <div class="star-memory" id="star-memory" hidden>
+        <p class="kicker" id="star-date"></p>
+        <h3 class="star-title" id="star-title"></h3>
+        <p class="star-text" id="star-text"></p>
+        <p class="star-note" id="star-note"></p>
+      </div>
+    </div>
+    <div class="counter" id="counter">
+      <p class="counter-big" id="counter-big"></p>
+      <p class="counter-small" id="counter-small" aria-hidden="true"></p>
+      <p class="counter-since" id="counter-since"></p>
+    </div>
+  </section>
+
+  <!-- SCENE 5 — OUR LITTLE ARCHIVE -->
+  <section class="scene archive" id="scene-archive" aria-labelledby="archive-line" tabindex="-1" hidden>
+    <div class="archive-head">
+      <h2 class="scene-line" id="archive-line"></h2>
+      <p class="hint" id="archive-hint" aria-hidden="true"></p>
+    </div>
+    <div class="pile" id="pile" tabindex="0" role="group" aria-roledescription="pile of photographs" aria-label="Photographs. Use the left and right arrow keys."></div>
+    <div class="pile-nav" id="pile-nav">
+      <button class="pile-btn" id="pile-prev" type="button" aria-label="Previous photograph"><span aria-hidden="true">&#8592;</span></button>
+      <span class="pile-count" id="pile-count" aria-live="polite"></span>
+      <button class="pile-btn" id="pile-next" type="button" aria-label="Next photograph"><span aria-hidden="true">&#8594;</span></button>
+    </div>
+  </section>
+
+  <!-- SCENE 6 — SOMETHING ABOUT YOU -->
+  <section class="scene about" id="scene-about" aria-labelledby="about-line" tabindex="-1" hidden>
+    <h2 class="scene-line" id="about-line"></h2>
+    <p class="hint" id="about-prompt"></p>
+    <div class="heart-wrap" id="heart-wrap">
+      <svg class="heart-guide" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 86 C20 64 8 46 14 30 C20 15 40 12 50 28 C60 12 80 15 86 30 C92 46 80 64 50 86 Z"></path></svg>
+      <canvas class="heart-canvas" id="heart-canvas" aria-hidden="true"></canvas>
+      <span class="heart-bloom" aria-hidden="true"></span>
+    </div>
+    <p class="heart-status" id="heart-status" role="status"></p>
+    <button class="alt-btn" id="heart-skip" type="button">Just show me</button>
+    <ol class="reasons" id="reasons" tabindex="-1" hidden></ol>
+  </section>
+
+  <!-- SCENE 7 — THE SOUND OF US -->
+  <section class="scene sound" id="scene-sound" aria-labelledby="sound-line" tabindex="-1" hidden>
+    <h2 class="scene-line" id="sound-line"></h2>
+    <div class="turntable" id="turntable">
+      <div class="plinth" aria-hidden="true"><span class="plinth-light"></span></div>
+      <div class="platter" aria-hidden="true">
+        <div class="record" id="record"><div class="record-label"><span id="record-title"></span></div></div>
+        <span class="record-sheen"></span>
+      </div>
+      <div class="tonearm" id="tonearm" aria-hidden="true"><span class="arm-pivot"></span><span class="arm-rod"></span><span class="arm-head"></span></div>
+      <button class="record-hit" id="record-hit" type="button" aria-label="Spin the record"></button>
+    </div>
+    <div class="sound-info">
+      <p class="hint" id="sound-hint" aria-hidden="true"></p>
+      <div class="song-reveal" id="song-reveal" hidden>
+        <p class="kicker">Our song</p>
+        <p class="song-title" id="song-title"></p>
+        <p class="song-artist" id="song-artist"></p>
+        <p class="song-dedication" id="song-dedication"></p>
+      </div>
+      <button class="play-btn" id="song-play" type="button" hidden><span class="play-icon" aria-hidden="true"></span><span id="song-play-label">Play our song</span></button>
+      <p class="song-status" id="song-status" role="status"></p>
+    </div>
+    <audio id="song-audio" preload="none"></audio>
+  </section>
+
+  <!-- SCENE 8 — THE SECRET I KEPT -->
+  <section class="scene secret" id="scene-secret" aria-labelledby="secret-line" tabindex="-1" hidden>
+    <h2 class="scene-line" id="secret-line"></h2>
+    <div class="secret-frame" id="secret-frame">
+      <div class="secret-content" id="secret-content">
+        <img class="secret-img" id="secret-img" alt="" decoding="async">
+        <p class="secret-msg" id="secret-msg"></p>
+      </div>
+      <canvas class="dust" id="dust" aria-hidden="true"></canvas>
+      <span class="glass" aria-hidden="true"></span>
+    </div>
+    <p class="hint" id="secret-hint" aria-hidden="true"></p>
+    <button class="alt-btn" id="secret-reveal" type="button">Blow the dust away</button>
+  </section>
+
+  <!-- SCENE 9 — THE LETTER -->
+  <section class="scene letterscene" id="scene-letter" aria-labelledby="letter-heading" tabindex="-1" hidden>
+    <h2 class="sr-only" id="letter-heading">A letter</h2>
+    <div class="desk" id="desk">
+      <div class="l-envelope" id="l-envelope">
+        <span class="l-body" aria-hidden="true"></span>
+        <span class="l-folded" aria-hidden="true"></span>
+        <span class="l-pocket" aria-hidden="true"><span class="l-to" id="l-to"></span></span>
+        <span class="l-flap" aria-hidden="true"><i class="l-flap-out"></i><i class="l-flap-in"></i></span>
+        <span class="l-seal" aria-hidden="true"></span>
+        <button class="l-hit" id="l-open" type="button" aria-label="Open the letter"></button>
+      </div>
+      <p class="hint" id="l-hint" aria-hidden="true"></p>
+      <p class="l-locked" id="l-locked" hidden></p>
+    </div>
+    <article class="lpaper" id="lpaper" tabindex="-1" aria-label="The letter" hidden>
+      <span class="lpaper-creases" aria-hidden="true"></span>
+      <p class="lpaper-date" id="lpaper-date"></p>
+      <div class="lpaper-body" id="lpaper-body"></div>
+      <p class="lpaper-sign" id="lpaper-sign"></p>
+      <p class="lpaper-ps" id="lpaper-ps"></p>
+    </article>
+  </section>
+
+  <!-- SCENE 10 — ONE LAST THING -->
+  <section class="scene finale" id="scene-finale" aria-labelledby="the-end" tabindex="-1" hidden>
+    <p class="the-end" id="the-end">The end.</p>
+    <div class="finale-wait" id="finale-wait">
+      <p class="wait-line">Wait. One last thing.</p>
+      <p class="hint" id="shake-hint" aria-hidden="true"></p>
+      <button class="alt-btn" id="finale-open" type="button">Show me</button>
+      <button class="alt-btn shake-permit" id="shake-permit" type="button" hidden>Let me shake it</button>
+    </div>
+    <div class="finale-reveal" id="finale-reveal" tabindex="-1" hidden>
+      <span class="flame" aria-hidden="true"><i></i></span>
+      <p class="finale-msg" id="finale-msg"></p>
+      <p class="finale-names"><span id="finale-to"></span><span class="amp" id="finale-amp">&amp;</span><span id="finale-from"></span></p>
+      <a class="cue revisit" id="finale-again" href="#scene-gift">Read it again</a>
+      <p class="goodnight" id="goodnight" hidden></p>
+    </div>
+  </section>
+
+  <footer class="proto-end">
+    <p>Prototype V5.1 · ten scenes</p>
+    <p id="end-sample" hidden>Sample story: fictional names, stock photographs</p>
+  </footer>
+</main>
+</body>
+</html>
